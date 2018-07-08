@@ -1,0 +1,75 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "hello-app",
+            "image": "./hello_app",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 80
+                }
+            ],
+            "essential": true,
+            "mountPoints": [
+                {
+                    "sourceVolume": "run",
+                    "containerPath": "/var/run"
+                  },
+                  {
+                    "sourceVolume": "assets",
+                    "containerPath": "/var/www"
+                  },
+                  {
+                    "sourceVolume": "logs",
+                    "containerPath": "/var/log"
+                  }
+            ]
+        },
+        {
+            "name": "nginx",
+            "image": "nginx:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80
+                }
+            ],
+            "mountPoints": [
+                {
+                    "sourceVolume": "run",
+                    "containerPath": "/var/run"
+                  },
+                  {
+                    "sourceVolume": "assets",
+                    "containerPath": "/var/www"
+                  },
+                  {
+                    "sourceVolume": "logs",
+                    "containerPath": "/var/log"
+                  }
+            ]
+        }
+    ],
+    "volumes": [
+        {  
+            "name": "run",
+            "host": {
+                "sourcePath": "/home/ec2-user/run"
+            }
+        },
+        {
+            "name": "logs",
+            "host": {
+                "sourcePath": "/home/ec2-user/logs"
+            }
+        },
+        {
+            "name": "assets",
+            "host": {
+                "sourcePath": "/home/ec2-user/assets"
+            }
+        }
+    ]
+}

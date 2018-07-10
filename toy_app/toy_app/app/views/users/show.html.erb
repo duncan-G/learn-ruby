@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Micro Posts:</strong>
+</P>
+<div>
+  <% @user.microposts.each do |micropost| %>
+    <div style="border: #000 solid 1px;margin-bottom: 5px;">
+      <h5> Created at: <span style="color:grey"><%= micropost.created_at %> </span></h5>
+      <p> <%= micropost.content %> </p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

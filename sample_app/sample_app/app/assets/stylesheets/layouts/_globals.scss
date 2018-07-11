@@ -1,5 +1,6 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+html, body {
+    height: 100vh;
+}
 
 body {
     padding-top: 60px;
@@ -19,4 +20,10 @@ textarea {
     h1 {
         margin-bottom: 10px;
     }
+}
+
+#main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }

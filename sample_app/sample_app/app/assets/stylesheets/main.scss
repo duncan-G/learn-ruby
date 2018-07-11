@@ -1,8 +1,7 @@
-// Variables
+// Core
 @import "base/variables";
-
-// Base
 @import "base/typography";
+@import "mixins/breakpoints";
 
 // Layouts
 @import "layouts/globals";

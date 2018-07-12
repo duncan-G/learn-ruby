@@ -1,0 +1,33 @@
+<% provide(:title, @user.name) %>
+<div id="user-profile" class="container">
+    <div class="card">
+        <div class="card-header">
+            <%= @user.name %>
+        </div>
+        <div class="card-body">
+            <div id="profile">
+                <div id="avatar"> <%= gravatar_for @user %> </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="category"> Email:  </div>
+                        <div class="text-truncate">  <%= @user.email %>  </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="category"> Password:  </div>
+                        <div class="value">  ************* </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="category"> Created:  </div>
+                        <div class="value">  <%= @user.created_at %> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="profile-edit-btn btn-link"> <a href="#">Change Email</a>  </div>
+            <div class="profile-edit-btn btn-link"> <a href="#">Change Password</a>  </div>
+        </div>
+    </div>
+</div>

@@ -7,5 +7,10 @@
 @import "layouts/globals";
 @import "layouts/normalize";
 @import "layouts/scrollbar";
+@import "layouts/debug";
 @import "layouts/header";
 @import "layouts/footer";
+
+// Controllers
+@import "static_pages.scss";
+@import "users.scss";

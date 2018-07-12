@@ -1,3 +1,111 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sign-up {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    max-width: 600px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+    form {
+        width: 100%;
+
+        .error {
+            color: #ff2929;
+            font-size: 9px;
+
+            ul, li {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+
+    #submit-buttom {
+        width: 100%;
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+
+#user-profile {
+    margin-top: 50px;
+
+    @include media-breakpoint('xs') {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .card {
+        max-width: 500px;
+        margin: 0 auto;
+
+        .card-header {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .card-body {
+            flex-direction: column;
+            margin-bottom: -15px;
+
+            #profile {
+                display: flex;
+                flex-direction: row;
+
+                #avatar {
+                    margin: 10px;
+                    padding: 10px;
+
+                    @include media-breakpoint('xs') {
+                        text-align: center;
+                    }
+                }
+
+                .container {
+                    margin: 10px;
+                    padding: 10px;
+
+                    .row {
+                        margin-bottom: 10px;
+                    }
+
+                    .category {
+                        width: 80px;
+                    }
+
+                    .text-truncate {
+                        @include media-breakpoint-down('sm') {
+                            width: 150px;
+                        }
+                        @include media-breakpoint-up('sm') {
+                            width: 220px;
+                        }
+                    }
+                }
+
+                @include media-breakpoint('xs') {
+                    flex-direction: column; 
+                }
+            }
+        }
+
+        .card-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            .profile-edit-btn {
+                margin: 0px 15px;
+            }
+        }
+    }
+}

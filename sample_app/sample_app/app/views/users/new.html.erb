@@ -1,2 +1,59 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="container sign-up">
+    <%= form_for(@user) do |f| %>
+        <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control", placeholder: "Enter name" %>
+            <% if @user.errors[:name].any? %>
+                <small class="error">
+                    <ul>
+                        <%  @user.errors[:name].each do |error| %>
+                            <li> <%= error %> </li>
+                        <% end %>
+                    </ul>
+                </small>
+            <% end %>
+        </div>
+        <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field  :email, class: "form-control", placeholder: "Enter email" %>
+            <% if @user.errors[:email].any? %>
+                <small class="error">
+                    <ul>
+                        <%  @user.errors[:email].each do |error| %>
+                            <li> <%= error %> </li>
+                        <% end %>
+                    </ul>
+                </small>
+            <% end %>
+        </div>
+        <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control", placeholder: "Enter password"%>
+            <% if @user.errors[:password].any? %>
+                <small class="error">
+                    <ul>
+                        <%  @user.errors[:password].each do |error| %>
+                            <li> <%= error %> </li>
+                        <% end %>
+                    </ul>
+                </small>
+            <% end %>
+        </div>
+        <div class="form-group">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password"%>
+            <% if @user.errors[:password_confirmation].any? %>
+                <small class="error">
+                    <ul>
+                        <%  @user.errors[:password_confirmation].each do |error| %>
+                            <li> <%= error %> </li>
+                        <% end %>
+                    </ul>
+                </small>
+            <% end %>
+        </div>
+        <div id="submit-buttom">
+            <button type="submit" class="btn btn-primary">Create Account</button>
+        </div>
+    <% end %>
+</div>

@@ -8,6 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.4'
+# Encryption
+gem 'bcrypt', '3.1.12'
 # Bootstrap
 gem 'bootstrap', '4.1.1'
 # Material
@@ -45,6 +47,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # Faker
+  gem 'faker', '1.9.1 '
 end
 
 group :development do
